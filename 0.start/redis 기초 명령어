@@ -1,0 +1,24 @@
+
+
+
+-- 레디스 서버 구성 
+cd redis-7.0.13/utils
+./install-server.sh
+
+
+-- 레디스 서버 실행 
+redis-server /app/redis/etc/redis_7002.conf
+
+-- 레디스 터미널 종료
+redis-cli -p 7002
+
+-- 레디스 서버 종료
+redis-cli -p 7002 shutdown
+
+
+-- sentinel 실행 
+redis-sentinel /app/redis/etc/sentinel_8101.conf
+
+-- sentinel 종료
+redis-sentinel -p 8101 shutdown
+
